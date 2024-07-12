@@ -1,0 +1,72 @@
+name - nombre
+
+main:
+grnd_level - nivel del suelo
+humidity - humedad
+pressure - presión
+sea_level - nivel del mar
+feels_like - sensación térmica
+temp - temperatura actual
+temp_max - temperatura máxima
+temp_min - temperatura mínima
+
+sys:
+country - país
+sunrise - amanecer
+sunset - atardecer
+timezone - zona horaria
+visibility - visibilidad
+
+weather:
+aquí están los datos del día
+(soleado, nublado etc..)
+
+
+COSAS QUE FALTARÍAN
+------------------------
+
+(RESOLVER)
+- Mostrar clima por defecto (Córdoba) pero en caso de
+obtener la ubicación mostrar el clima de dicha ubicación
+
+(RESOLVER)
+- Filtrar ciudades:
+Filtrar si hay mas de una ciudad con el mismo nombre, 
+si el nombre de la ciudad esta repetido, 
+mostrar una lista de dicha ciudades al presionar una ciudad
+deberia mostrar un "minimapa" mostrando la ubicacion
+ya que no es posible desde la api ver en que provincia se encuentra
+(solo muestra ciudad/pais).
+
+(OPCIONAL)
+- Temperatura MIN. Y MAX.
+La api gratuita actualmente no ofrece de forma directa 
+la temperatura mínima y máxima del dia ACTUAL, tengo entendido
+que se puede hacer de alguna manera solicitando con 'forecast',
+lo cual te devuelve el clima cada 3 horas del día.
+
+(OPCIONAL)
+- Clima proximos 5 días.
+Crear un contenedor que muestre el clima de los próximos 5 días.
+Al presionar en uno de los días se debería abrir un contenedor que
+muestre la informacion del clima de ese día.
+
+(OPCIONAL)
+- Mostrar clima internacional
+Configurar para poder mostrar el clima de todas
+las ciudades disponibles de la api.
+Actualmente son +200.000 ciudades para solicitar.
+
+
+*******************************
+Estado del clima ingles/español
+*******************************
+clear sky ----------------- cielo despejado
+few clouds ---------------- pocas nubes
+scattered clouds ---------- nubes dispersas
+broken clouds ------------- nubes rotas
+shower rain --------------- chubascos
+rain ---------------------- lluvia
+thunderstorm -------------- tormenta
+snow ---------------------- nieve
+mist ---------------------- niebla
