@@ -11,12 +11,11 @@ ICONOS Dependiendo el clima.
 */
 
 // import config from './config.js';
-let apiKeyNetlify = apiKeyNetlify;
 window.addEventListener('load', () => {
-
+    
     const buscarCiudad = document.getElementById('buscar');
     const btnBuscar = document.getElementById('btn_buscar');
-
+    
     // VARIABLES A CARGAR DESDE API
     const imgClima = document.getElementById('img_dia');
     const estadoClima = document.getElementById('estado_dia');
@@ -27,8 +26,9 @@ window.addEventListener('load', () => {
     const viento = document.getElementById('viento');
     const ubicacionCiudad = document.getElementById('ciudad');
     const fechaUbi = document.getElementById('fecha');
-
+    
     // APIKEY OpenWeatherMap.
+    let apiKeyNetlify = apiKeyNetlify;
     
     let ciudadIngresada = '';
     // SE TOMA EL VALOR EN TIEMPO REAL DEL INPUT
@@ -53,7 +53,7 @@ window.addEventListener('load', () => {
         let palabra = ciudadIngresada.replace(/ /g, '+'); // Cambia los 'Espacios' por '+'
         console.log(`RESULTADO: ${palabra}`);
 
-        const urlCiudad = `https://api.openweathermap.org/data/2.5/weather?q=${palabra},ar&appid=${apiKey}&units=metric`;
+        const urlCiudad = `https://api.openweathermap.org/data/2.5/weather?q=${palabra},ar&appid=${apiKeyNetlify}&units=metric`;
         console.log(`MOSTRANDO CLIMA POR BUSQUEDA DEL USUARIO.`)
         llamadaClima(urlCiudad);
 
@@ -93,7 +93,7 @@ window.addEventListener('load', () => {
                 lat = pos.coords.latitude;
                 lon = pos.coords.longitude;
 
-                const urlUbicacion = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+                const urlUbicacion = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKeyNetlify}&units=metric`;
                 console.log(`MOSTRANDO CLIMA POR UBICACIÓN.`);
                 llamadaClima(urlUbicacion);
 
