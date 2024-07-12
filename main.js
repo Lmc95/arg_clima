@@ -10,7 +10,7 @@ Fecha.
 ICONOS Dependiendo el clima.
 */
 
-import config from './config.js';
+// import config from './config.js';
 window.addEventListener('load', () => {
 
     const buscarCiudad = document.getElementById('buscar');
@@ -28,7 +28,7 @@ window.addEventListener('load', () => {
     const fechaUbi = document.getElementById('fecha');
 
     // APIKEY OpenWeatherMap.
-    const apiKey = config.apiKey;
+     const apiKey = process.env.apiKey;
 
     let ciudadIngresada = '';
     // SE TOMA EL VALOR EN TIEMPO REAL DEL INPUT
