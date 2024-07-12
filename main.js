@@ -28,7 +28,7 @@ window.addEventListener('load', () => {
     const fechaUbi = document.getElementById('fecha');
 
     // APIKEY OpenWeatherMap.
-     const apiKey = process.env.apiKey;
+     const apiKey = apiKeyNetlify;
 
     let ciudadIngresada = '';
     // SE TOMA EL VALOR EN TIEMPO REAL DEL INPUT
