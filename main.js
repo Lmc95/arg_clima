@@ -12,11 +12,10 @@ ICONOS Dependiendo el clima.
 
 // import config from './config.js';
 window.addEventListener('load', () => {
-    console.log(`Api desde netlify: ${process.env.apiKeyNetlify}`);
-    
+
     const buscarCiudad = document.getElementById('buscar');
     const btnBuscar = document.getElementById('btn_buscar');
-    
+
     // VARIABLES A CARGAR DESDE API
     const imgClima = document.getElementById('img_dia');
     const estadoClima = document.getElementById('estado_dia');
@@ -27,10 +26,13 @@ window.addEventListener('load', () => {
     const viento = document.getElementById('viento');
     const ubicacionCiudad = document.getElementById('ciudad');
     const fechaUbi = document.getElementById('fecha');
-    
+
+    // Importa el paquete dotenv y carga las variables de entorno
+
     // APIKEY OpenWeatherMap.
-    let apiKey;
-    
+    let apiKey = process.env.apiKeyNetlify;
+    console.log(`Api desde netlify: ${apiKey}`);
+
     let ciudadIngresada = '';
     // SE TOMA EL VALOR EN TIEMPO REAL DEL INPUT
     buscarCiudad.addEventListener('input', (e) => {
@@ -49,7 +51,6 @@ window.addEventListener('load', () => {
     })
 
     const inputUsuario = () => {
-        apiKey = apiKeyNetlify;
         ciudadIngresada = buscarCiudad.value.toLowerCase();
         buscarCiudad.value = '';
         let palabra = ciudadIngresada.replace(/ /g, '+'); // Cambia los 'Espacios' por '+'
@@ -94,8 +95,6 @@ window.addEventListener('load', () => {
             navigator.geolocation.getCurrentPosition(pos => {
                 lat = pos.coords.latitude;
                 lon = pos.coords.longitude;
-
-                apiKey = apiKeyNetlify;
 
                 const urlUbicacion = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
                 console.log(`MOSTRANDO CLIMA POR UBICACIÓN.`);
