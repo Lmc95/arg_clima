@@ -11,6 +11,7 @@ ICONOS Dependiendo el clima.
 */
 
 // import config from './config.js';
+let apiKeyNetlify = apiKeyNetlify;
 window.addEventListener('load', () => {
 
     const buscarCiudad = document.getElementById('buscar');
@@ -28,7 +29,6 @@ window.addEventListener('load', () => {
     const fechaUbi = document.getElementById('fecha');
 
     // APIKEY OpenWeatherMap.
-    let apiKeyNetlify = apiKeyNetlify;
     
     let ciudadIngresada = '';
     // SE TOMA EL VALOR EN TIEMPO REAL DEL INPUT
