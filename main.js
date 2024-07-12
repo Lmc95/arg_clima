@@ -48,7 +48,7 @@ window.addEventListener('load', () => {
     })
 
     const inputUsuario = () => {
-        apiKey = process.env.apiKeyNetlify;
+        apiKey = apiKeyNetlify;
         ciudadIngresada = buscarCiudad.value.toLowerCase();
         buscarCiudad.value = '';
         let palabra = ciudadIngresada.replace(/ /g, '+'); // Cambia los 'Espacios' por '+'
@@ -94,7 +94,7 @@ window.addEventListener('load', () => {
                 lat = pos.coords.latitude;
                 lon = pos.coords.longitude;
 
-                apiKey = process.env.apiKeyNetlify;
+                apiKey = apiKeyNetlify;
 
                 const urlUbicacion = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
                 console.log(`MOSTRANDO CLIMA POR UBICACIÓN.`);
