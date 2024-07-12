@@ -30,7 +30,7 @@ window.addEventListener('load', () => {
     // Importa el paquete dotenv y carga las variables de entorno
 
     // APIKEY OpenWeatherMap.
-    let apiKey = process.env.apiKeyNetlify;
+    let apiKey = apiKeyNetlify;
     console.log(`Api desde netlify: ${apiKey}`);
 
     let ciudadIngresada = '';
