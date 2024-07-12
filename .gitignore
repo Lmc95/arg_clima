@@ -1,2 +1,5 @@
 config.js
 dat_clima_api.txt
+
+# Local Netlify folder
+.netlify

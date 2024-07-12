@@ -12,6 +12,7 @@ ICONOS Dependiendo el clima.
 
 // import config from './config.js';
 window.addEventListener('load', () => {
+    console.log(`Api desde netlify: ${process.env.apiKeyNetlify}`);
     
     const buscarCiudad = document.getElementById('buscar');
     const btnBuscar = document.getElementById('btn_buscar');
