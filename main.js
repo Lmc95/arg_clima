@@ -53,7 +53,7 @@ window.addEventListener('load', () => {
         let palabra = ciudadIngresada.replace(/ /g, '+'); // Cambia los 'Espacios' por '+'
         console.log(`RESULTADO: ${palabra}`);
 
-        const urlCiudad = `https://api.openweathermap.org/data/2.5/weather?q=${palabra},ar&appid=${apiKeyNetlify}&units=metric`;
+        const urlCiudad = `https://api.openweathermap.org/data/2.5/weather?q=${palabra},ar&appid=${apiKey}&units=metric`;
         console.log(`MOSTRANDO CLIMA POR BUSQUEDA DEL USUARIO.`)
         llamadaClima(urlCiudad);
 
@@ -93,7 +93,7 @@ window.addEventListener('load', () => {
                 lat = pos.coords.latitude;
                 lon = pos.coords.longitude;
 
-                const urlUbicacion = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKeyNetlify}&units=metric`;
+                const urlUbicacion = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
                 console.log(`MOSTRANDO CLIMA POR UBICACIÓN.`);
                 llamadaClima(urlUbicacion);
 
@@ -109,7 +109,6 @@ window.addEventListener('load', () => {
                 // console.log(data)
                 // Cargamos los datos al DOM
                 // tempMaxMin.textContent = `MAX. ${Math.round(data.main.temp_max)}°c - MIN. ${Math.round(data.main.temp_min)}°c`
-
 
                 temp.textContent = `${Math.round(data.main.temp)}°c`
                 sensTermica.innerHTML = `St: <span>${Math.round(data.main.feels_like)}°c </span>`
