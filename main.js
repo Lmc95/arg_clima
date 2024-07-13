@@ -10,8 +10,10 @@ Fecha.
 ICONOS Dependiendo el clima.
 */
 
-// import config from './config.js';
+
 window.addEventListener('load', () => {
+    require( 'dotenv' ).config();
+    const apiKey = process.env.MY_API_KEY;
 
     const buscarCiudad = document.getElementById('buscar');
     const btnBuscar = document.getElementById('btn_buscar');
@@ -30,8 +32,6 @@ window.addEventListener('load', () => {
     // Importa el paquete dotenv y carga las variables de entorno
 
     // APIKEY OpenWeatherMap.
-
-    const apiKey = process.env.MY_API_KEY;
 
     let ciudadIngresada = '';
     // SE TOMA EL VALOR EN TIEMPO REAL DEL INPUT
