@@ -12,7 +12,6 @@ ICONOS Dependiendo el clima.
 
 // import config from './config.js';
 window.addEventListener('load', () => {
-    let apiKey;
 
     const buscarCiudad = document.getElementById('buscar');
     const btnBuscar = document.getElementById('btn_buscar');
@@ -31,7 +30,8 @@ window.addEventListener('load', () => {
     // Importa el paquete dotenv y carga las variables de entorno
 
     // APIKEY OpenWeatherMap.
-    
+
+    const apiKey = process.env.MY_API_KEY;
 
     let ciudadIngresada = '';
     // SE TOMA EL VALOR EN TIEMPO REAL DEL INPUT
@@ -51,7 +51,7 @@ window.addEventListener('load', () => {
     })
 
     const inputUsuario = () => {
-        apiKey = MY_API_KEY;
+        
         ciudadIngresada = buscarCiudad.value.toLowerCase();
         buscarCiudad.value = '';
         let palabra = ciudadIngresada.replace(/ /g, '+'); // Cambia los 'Espacios' por '+'
@@ -96,7 +96,7 @@ window.addEventListener('load', () => {
             navigator.geolocation.getCurrentPosition(pos => {
                 lat = pos.coords.latitude;
                 lon = pos.coords.longitude;
-                apiKey = MY_API_KEY;
+                
                 const urlUbicacion = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
                 console.log(`MOSTRANDO CLIMA POR UBICACIÓN.`);
                 llamadaClima(urlUbicacion);
