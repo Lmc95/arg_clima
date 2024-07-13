@@ -12,6 +12,7 @@ ICONOS Dependiendo el clima.
 
 // import config from './config.js';
 window.addEventListener('load', () => {
+    let apiKey;
 
     const buscarCiudad = document.getElementById('buscar');
     const btnBuscar = document.getElementById('btn_buscar');
@@ -50,12 +51,13 @@ window.addEventListener('load', () => {
     })
 
     const inputUsuario = () => {
+        apiKey = MY_API_KEY;
         ciudadIngresada = buscarCiudad.value.toLowerCase();
         buscarCiudad.value = '';
         let palabra = ciudadIngresada.replace(/ /g, '+'); // Cambia los 'Espacios' por '+'
         console.log(`RESULTADO: ${palabra}`);
 
-        const urlCiudad = `https://api.openweathermap.org/data/2.5/weather?q=${palabra},ar&appid=${APIKEY}&units=metric`;
+        const urlCiudad = `https://api.openweathermap.org/data/2.5/weather?q=${palabra},ar&appid=${apiKey}&units=metric`;
         console.log(`MOSTRANDO CLIMA POR BUSQUEDA DEL USUARIO.`)
         llamadaClima(urlCiudad);
 
@@ -94,8 +96,8 @@ window.addEventListener('load', () => {
             navigator.geolocation.getCurrentPosition(pos => {
                 lat = pos.coords.latitude;
                 lon = pos.coords.longitude;
-
-                const urlUbicacion = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${APIKEY}&units=metric`;
+                apiKey = MY_API_KEY;
+                const urlUbicacion = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
                 console.log(`MOSTRANDO CLIMA POR UBICACIÓN.`);
                 llamadaClima(urlUbicacion);
 
