@@ -11,10 +11,10 @@ ICONOS Dependiendo el clima.
 */
 
 
+require( 'dotenv' ).config();
 window.addEventListener('load', () => {
-    require( 'dotenv' ).config();
     const apiKey = process.env.MY_API_KEY;
-
+    
     const buscarCiudad = document.getElementById('buscar');
     const btnBuscar = document.getElementById('btn_buscar');
 
