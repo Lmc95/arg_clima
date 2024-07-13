@@ -30,8 +30,7 @@ window.addEventListener('load', () => {
     // Importa el paquete dotenv y carga las variables de entorno
 
     // APIKEY OpenWeatherMap.
-    let apiKey = process.env.APIKEY;
-    console.log(`Api desde netlify: ${apiKey}`);
+    
 
     let ciudadIngresada = '';
     // SE TOMA EL VALOR EN TIEMPO REAL DEL INPUT
@@ -56,7 +55,7 @@ window.addEventListener('load', () => {
         let palabra = ciudadIngresada.replace(/ /g, '+'); // Cambia los 'Espacios' por '+'
         console.log(`RESULTADO: ${palabra}`);
 
-        const urlCiudad = `https://api.openweathermap.org/data/2.5/weather?q=${palabra},ar&appid=${apiKey}&units=metric`;
+        const urlCiudad = `https://api.openweathermap.org/data/2.5/weather?q=${palabra},ar&appid=${APIKEY}&units=metric`;
         console.log(`MOSTRANDO CLIMA POR BUSQUEDA DEL USUARIO.`)
         llamadaClima(urlCiudad);
 
@@ -96,7 +95,7 @@ window.addEventListener('load', () => {
                 lat = pos.coords.latitude;
                 lon = pos.coords.longitude;
 
-                const urlUbicacion = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+                const urlUbicacion = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${APIKEY}&units=metric`;
                 console.log(`MOSTRANDO CLIMA POR UBICACIÓN.`);
                 llamadaClima(urlUbicacion);
 
